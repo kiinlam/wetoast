@@ -1,0 +1,48 @@
+<!--about.wxml-->
+<import src="../../src/wetoast.wxml"/>
+<view class="page_bd">
+    <view class="code" wx:if="{{type==='img'}}">
+            <view> this.wetoast.toast({ </view>
+            <view class="indent"> img: 'data:image/png;base64...', </view>
+            <view class="indent"> imgClassName: 'my_wetoast_img', </view>
+            <view class="indent"> imgMode: 'scaleToFill' </view>
+            <view> }) </view>
+    </view>
+    <view class="code" wx:if="{{type==='title'}}">
+            <view> this.wetoast.toast({ </view>
+            <view class="indent"> title: 'WeToast', </view>
+            <view class="indent"> titleClassName: 'my_wetoast_title' </view>
+            <view> }) </view>
+    </view>
+    <view class="code" wx:if="{{type==='full'}}">
+            <view> this.wetoast.toast({ </view>
+            <view class="indent"> img: 'data:image/png;base64...', </view>
+            <view class="indent"> imgClassName: 'my_wetoast_img', </view>
+            <view class="indent"> imgMode: 'scaleToFill', </view>
+            <view class="indent"> title: 'WeToast', </view>
+            <view class="indent"> titleClassName: 'my_wetoast_title', </view>
+            <view class="indent"> success (data) { </view>
+                <view class="indent2"> console.log(Date.now() + ': success') </view>
+                <view class="indent2"> console.log(data) </view>
+            <view class="indent"> }, </view>
+            <view class="indent"> fail (data) { </view>
+                <view class="indent2"> console.log(Date.now() + ': fail') </view>
+                <view class="indent2"> console.log(data) </view>
+            <view class="indent"> }, </view>
+            <view class="indent"> complete (data) { </view>
+                <view class="indent2"> console.log(Date.now() + ': complete') </view>
+                <view class="indent2"> console.log(data) </view>
+            <view class="indent"> } </view>
+            <view> }) </view>
+    </view>
+    <view class="btn-area">
+        <button class="btn btn-run" bindtap="onRun">Run</button>
+    </view>
+</view>
+<view class="footer footer_fixed-bottom">
+    <view class="footer__links">
+        <text class="footer__link" bindtap="back">Home</text>
+    </view>
+    <view class="footer__text">wetoast by kiinlam</view>
+</view>
+<template is="wetoast" data="{{...wetoast}}"/>

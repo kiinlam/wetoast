@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<import src="../../src/wetoast.wxml"/>
+
+<view class="page_bd">
+    <view class="btn-area">
+        <button class="btn" bindtap="onImgToast">only Image</button>
+        <button class="btn-code" bindtap="onCode" data-type="img">code</button>
+    </view>
+    <view class="btn-area">
+        <button class="btn" bindtap="onTitleToast">only Title</button>
+        <button class="btn-code" bindtap="onCode" data-type="title">code</button>
+    </view>
+    <view class="btn-area">
+        <button class="btn" bindtap="onFullToast">Full</button>
+        <button class="btn-code" bindtap="onCode" data-type="full">code</button>
+    </view>
+</view>
+<view class="footer footer_fixed-bottom">
+    <view class="footer__links">
+        <navigator url="../about/about" class="footer__link">About</navigator>
+    </view>
+    <view class="footer__text">wetoast by kiinlam</view>
+</view>
+
+<!-- wetoast -->
+<template is="wetoast" data="{{...wetoast}}"/>

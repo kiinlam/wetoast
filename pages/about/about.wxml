@@ -1,0 +1,19 @@
+<!--about.wxml-->
+<view class="page_bd">
+    <view class="text"><text style="font-weight: 900; font-size: 1.5em;">WeToast</text> by kiinlam</view>
+	<view class="text">WeApp Toast add-ons</view>
+	<view class="text">微信小程序toast增强插件</view>
+	<view class="text">Github:
+    https://github.com/kiinlam/wetoast</view>
+    <view class="text">LICENSE: MIT</view>
+    <view class="text">----------</view>
+    <view class="text">TODO:</view>
+    <view class="text">1、增加可自定义动画功能</view>
+    <view class="text">2、增加预定义ICON</view>
+</view>
+<view class="footer footer_fixed-bottom">
+    <view class="footer__links">
+        <text class="footer__link" bindtap="back">Home</text>
+    </view>
+    <view class="footer__text">wetoast by kiinlam</view>
+</view>
