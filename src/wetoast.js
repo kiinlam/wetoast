@@ -9,8 +9,13 @@
 //构造函数
 function WeToast () {
     let pages = getCurrentPages()
-    this.__page = pages[pages.length - 1]
+    let curPage = pages[pages.length - 1]
+    this.__page = curPage
     this.__timeout = null
+
+    //附加到page上，方便访问
+    curPage.wetoast = this
+    
     return this
 }
 
@@ -38,7 +43,7 @@ WeToast.prototype.show = function(data) {
 
     //display需要先设置为block之后，才能执行动画
     page.setData({
-        'wetoast.reveal': true
+        '__wetoast__.reveal': true
     })
 
     // complete callback
@@ -50,7 +55,7 @@ WeToast.prototype.show = function(data) {
         data.animationData = animation.export()
         data.reveal = true
         page.setData({
-            wetoast: data
+            __wetoast__: data
         })
     },30)
 
@@ -59,7 +64,7 @@ WeToast.prototype.show = function(data) {
 
         // success callback
         typeof data.success === 'function' && data.success(data)
-    }, (data.duration || 2000) + 400)
+    }, (data.duration || 1500) + 400)
 }
 
 //隐藏
@@ -68,14 +73,14 @@ WeToast.prototype.hide = function() {
     
     clearTimeout(this.__timeout)
 
-    if (!page.data.wetoast.reveal) {
+    if (!page.data.__wetoast__.reveal) {
         return
     }
     
     let animation = wx.createAnimation()
     animation.opacity(0).step()
     page.setData({
-        wetoast: {
+        __wetoast__: {
             reveal: true,
             animationData: animation.export()
         }
@@ -83,7 +88,7 @@ WeToast.prototype.hide = function() {
     
     setTimeout(() => {
         page.setData({
-            wetoast: {}
+            __wetoast__: {}
         })
     }, 400)
 }

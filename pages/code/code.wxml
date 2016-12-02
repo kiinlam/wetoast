@@ -23,15 +23,12 @@
             <view class="indent"> titleClassName: 'my_wetoast_title', </view>
             <view class="indent"> success (data) { </view>
                 <view class="indent2"> console.log(Date.now() + ': success') </view>
-                <view class="indent2"> console.log(data) </view>
             <view class="indent"> }, </view>
             <view class="indent"> fail (data) { </view>
                 <view class="indent2"> console.log(Date.now() + ': fail') </view>
-                <view class="indent2"> console.log(data) </view>
             <view class="indent"> }, </view>
             <view class="indent"> complete (data) { </view>
                 <view class="indent2"> console.log(Date.now() + ': complete') </view>
-                <view class="indent2"> console.log(data) </view>
             <view class="indent"> } </view>
             <view> }) </view>
     </view>
@@ -45,4 +42,4 @@
     </view>
     <view class="footer__text">wetoast by kiinlam</view>
 </view>
-<template is="wetoast" data="{{...wetoast}}"/>
+<template is="wetoast" data="{{...__wetoast__}}"/>

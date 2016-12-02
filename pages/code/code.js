@@ -1,5 +1,4 @@
 // code.js
-let {WeToast} = require('../../src/wetoast.js')
 
 // 获取应用实例
 let app = getApp()
@@ -8,12 +7,13 @@ Page({
 	onLoad (option) {
 		this.type = option.type
 		this.setData({type:this.type})
-        this.wetoast = new WeToast()
+
+        //创建可重复使用的toast实例，并附加到this上，通过this.wetoast访问
+        new app.WeToast()
 	},
 
 	onRun () {
 		let type = this.type
-		console.log(type)
 		this[type + 'Toast']()
 	},
 
@@ -41,15 +41,12 @@ Page({
             titleClassName: 'my_wetoast_title',
             success (data) {
                 console.log(Date.now() + ': success')
-                console.log(data)
             },
             fail (data) {
                 console.log(Date.now() + ': fail')
-                console.log(data)
             },
             complete (data) {
                 console.log(Date.now() + ': complete')
-                console.log(data)
             }
         })
     },

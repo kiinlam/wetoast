@@ -1,5 +1,4 @@
 // index.js
-let {WeToast} = require('../../src/wetoast.js')
 
 // 获取应用实例
 let app = getApp()
@@ -9,7 +8,8 @@ Page({
 
     // 仅执行一次，可用于获取、设置数据
     onLoad () {
-        this.wetoast = new WeToast()
+        //创建可重复使用的toast实例，并附加到this上，通过this.wetoast访问
+        new app.WeToast()
     },
 
     onImgToast () {
@@ -36,15 +36,12 @@ Page({
             titleClassName: 'my_wetoast_title',
             success (data) {
                 console.log(Date.now() + ': success')
-                console.log(data)
             },
             fail (data) {
                 console.log(Date.now() + ': fail')
-                console.log(data)
             },
             complete (data) {
                 console.log(Date.now() + ': complete')
-                console.log(data)
             }
         })
     },
