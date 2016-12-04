@@ -59,12 +59,20 @@ WeToast.prototype.show = function(data) {
         })
     },30)
 
-    this.__timeout = setTimeout(() => {
-        this.toast()
+    if (data.duration === 0) {
+        // success callback after toast showed
+        setTimeout (() => {
+            typeof data.success === 'function' && data.success(data)
+        }, 430)
+    } else {
+        this.__timeout = setTimeout(() => {
+            this.toast()
 
-        // success callback
-        typeof data.success === 'function' && data.success(data)
-    }, (data.duration || 1500) + 400)
+            // success callback
+            typeof data.success === 'function' && data.success(data)
+        }, (data.duration || 1500) + 400)
+    }
+
 }
 
 //隐藏
