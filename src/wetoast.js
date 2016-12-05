@@ -31,7 +31,10 @@ WeToast.prototype.toast = function(data) {
         console.error(err)
         
         // fail callback
-        typeof data.fail === 'function' && data.fail(data)
+        data && typeof data.fail === 'function' && data.fail(data)
+    } finally {
+        // complete callback
+        data && typeof data.complete === 'function' && data.complete(data)
     }
 }
 
@@ -45,9 +48,6 @@ WeToast.prototype.show = function(data) {
     page.setData({
         '__wetoast__.reveal': true
     })
-
-    // complete callback
-    typeof data.complete === 'function' && data.complete(data)
 
     setTimeout(()=>{
         let animation = wx.createAnimation()
@@ -88,10 +88,7 @@ WeToast.prototype.hide = function() {
     let animation = wx.createAnimation()
     animation.opacity(0).step()
     page.setData({
-        __wetoast__: {
-            reveal: true,
-            animationData: animation.export()
-        }
+        '__wetoast__.animationData': animation.export()
     })
     
     setTimeout(() => {

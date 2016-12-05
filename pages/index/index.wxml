@@ -3,15 +3,19 @@
 
 <view class="page_bd">
     <view class="btn-area">
-        <button class="btn" bindtap="onImgToast">only Image</button>
+        <button class="btn" bindtap="onImgToast">仅图片</button>
         <button class="btn-code" bindtap="onCode" data-type="img">code</button>
     </view>
     <view class="btn-area">
-        <button class="btn" bindtap="onTitleToast">only Title</button>
+        <button class="btn" bindtap="onTitleToast">仅标题</button>
         <button class="btn-code" bindtap="onCode" data-type="title">code</button>
     </view>
     <view class="btn-area">
-        <button class="btn" bindtap="onFullToast">Full</button>
+        <button class="btn" bindtap="onTimeToast">持续5秒</button>
+        <button class="btn-code" bindtap="onCode" data-type="time">code</button>
+    </view>
+    <view class="btn-area">
+        <button class="btn" bindtap="onFullToast">完整演示</button>
         <button class="btn-code" bindtap="onCode" data-type="full">code</button>
     </view>
 </view>

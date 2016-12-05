@@ -28,9 +28,10 @@
     box-sizing: border-box;
     transform: translateX(-50%);
     background: rgba(40, 40, 40, 0.75);
-    /*text-align: center;*/
     border-radius: 5px;
     color: #FFFFFF;
+    word-wrap: break-word;
+    word-break: break-all;
     align-items: center;
 	justify-content: space-around;
 }

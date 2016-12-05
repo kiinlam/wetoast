@@ -2,25 +2,25 @@
 <import src="../../src/wetoast.wxml"/>
 <view class="page_bd">
     <view class="code" wx:if="{{type==='img'}}">
-            <view> this.wetoast.toast({ </view>
-            <view class="indent"> img: 'data:image/png;base64...', </view>
-            <view class="indent"> imgClassName: 'my_wetoast_img', </view>
-            <view class="indent"> imgMode: 'scaleToFill' </view>
+            <view> wetoast.toast({ </view>
+            <view class="indent"> img: 'data:image/png;base64......' </view>
             <view> }) </view>
     </view>
     <view class="code" wx:if="{{type==='title'}}">
-            <view> this.wetoast.toast({ </view>
+            <view> wetoast.toast({ </view>
+            <view class="indent"> title: 'WeToast' </view>
+            <view> }) </view>
+    </view>
+    <view class="code" wx:if="{{type==='time'}}">
+            <view> wetoast.toast({ </view>
             <view class="indent"> title: 'WeToast', </view>
-            <view class="indent"> titleClassName: 'my_wetoast_title' </view>
+            <view class="indent"> duration: 5000 </view>
             <view> }) </view>
     </view>
     <view class="code" wx:if="{{type==='full'}}">
-            <view> this.wetoast.toast({ </view>
-            <view class="indent"> img: 'data:image/png;base64...', </view>
-            <view class="indent"> imgClassName: 'my_wetoast_img', </view>
-            <view class="indent"> imgMode: 'scaleToFill', </view>
+            <view> wetoast.toast({ </view>
+            <view class="indent"> img: 'data:image/png;base64......' </view>
             <view class="indent"> title: 'WeToast', </view>
-            <view class="indent"> titleClassName: 'my_wetoast_title', </view>
             <view class="indent"> success (data) { </view>
                 <view class="indent2"> console.log(Date.now() + ': success') </view>
             <view class="indent"> }, </view>

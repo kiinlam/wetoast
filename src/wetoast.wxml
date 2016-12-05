@@ -5,7 +5,7 @@
 		<view class="wetoast__bd" animation="{{animationData}}">
 			<block wx:if="{{img}}">
 				<view class="wetoast__bd__img {{imgClassName || ''}}">
-					<image class="wetoast__bd__img_desc" src="{{img}}" mode="{{imgMode}}"></image>
+					<image class="wetoast__bd__img_desc" src="{{img}}" mode="{{imgMode || 'scaleToFill'}}"></image>
 				</view>
 			</block>
 			<block wx:if="{{title}}">

@@ -8,7 +8,7 @@ Page({
 
     // 仅执行一次，可用于获取、设置数据
     onLoad () {
-        //创建可重复使用的toast实例，并附加到this上，通过this.wetoast访问
+        //创建可重复使用的WeToast实例，并附加到this上，通过this.wetoast访问
         new app.WeToast()
     },
 
@@ -24,6 +24,13 @@ Page({
         this.wetoast.toast({
             title: 'WeToast',
             titleClassName: 'my_wetoast_title'
+        })
+    },
+
+    onTimeToast () {
+        this.wetoast.toast({
+            title: 'WeToast',
+            duration: 5000
         })
     },
 
