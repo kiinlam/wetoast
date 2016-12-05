@@ -9,6 +9,8 @@ WeToast for 微信小程序 toast增强插件
 
 [下载WeToast项目](https://github.com/kiinlam/wetoast/archive/master.zip)，用[微信web开发者工具](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html)打开项目根目录
 
+<img src="https://raw.githubusercontent.com/kiinlam/wetoast/master/images/demo.png" alt="demo capture" />
+
 ## 如何使用
 
 WeTaost插件源码位于`src`目录下，包含3个文件。
