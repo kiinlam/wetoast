@@ -3,7 +3,7 @@ WeToast for 微信小程序 toast增强插件
 
 ## 概述
 
-[WeToast](https://github.com/kiinlam/wetoast) 仿照微信小程序提供的 `showToast` API功能，提供视觉一致的增强插件，弥补小程序`wx.showToast`功能上的不足，如只能显示`success`、`loading`两种icon，且icon不可去除，持续时间最大10秒等。
+[WeToast](https://github.com/kiinlam/wetoast) 是仿照微信小程序提供的 `showToast` 功能，提供视觉一致的增强插件，弥补小程序`showToast`功能上的不足（如只能显示`success`、`loading`两种icon，且icon不可去除，持续时间最大10秒等）。
 
 ## 预览
 
