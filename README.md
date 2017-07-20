@@ -1,3 +1,11 @@
+## 公告
+
+微信小程序现已在框架升级了`showToast`API，增加了更多自定义功能，推荐使用。本仓库停止更新。需要交流可提Issue，不便之处请海涵。
+
+`wx.showToast` API地址：https://mp.weixin.qq.com/debug/wxadoc/dev/api/api-react.html#wxshowtoastobject
+
+===
+
 WeToast for 微信小程序 toast增强插件
 ===
 
